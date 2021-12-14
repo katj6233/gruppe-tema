@@ -1,0 +1,177 @@
+/******************* SIDEBAR SAT TIL 0 MARGIN, ELLERS KAN MAN IKKE ORDNE DET ***************/
+
+.elementor-37 .elementor-element.elementor-element-68a6893 {
+  margin-bottom: 0px;
+}
+
+/******************* DROPDOWN MENU ***************/
+
+.dropdown-menu {
+  display: flex;
+  gap: 2rem;
+  margin-block: 6rem;
+}
+
+/* Dropdown Button */
+.dropbtn-categori,
+.dropbtn-kategori,
+.dropbtn-kategori2 {
+  background-color: #042c48;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  padding-inline: 20px;
+  padding-block: 10px;
+  font-size: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropbtn-categori,
+.dropbtn-kategori,
+.dropbtn-kategori2 {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn-categori {
+  margin-left: 10rem;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content div {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content div:hover {
+  background-color: #becdda;
+  color: white;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #becdda;
+}
+
+.dropdown:hover .dropbtn-argang {
+  background-color: #becdda;
+}
+
+/******************* DROPDOWN MENU SLUT ***************/
+
+/******************* BREADCRUMB STI ***************/
+
+.breadcrumb {
+  margin-top: 20rem;
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin-left: 0rem;
+}
+
+ul.breadcrumb li a {
+  color: black;
+}
+
+ul.breadcrumb li + li:before {
+  color: black;
+  padding-right: 2rem;
+  content: ">";
+}
+
+ul.breadcrumb li a:hover {
+  text-decoration: underline;
+}
+
+/******************* BREADCRUMB STI SLUT ***************/
+
+/******************* PRODUKTER I LOOPVIEW OG ANDRE PRODUKTER I MINI LOOPVIEW PÅ SINGLEVIEW GRID ***************/
+#produkter-oversigt,
+#andre_produkter {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 35px;
+  margin-inline: 10rem;
+}
+
+/******************* TEMPLATE TEKST (BÅDE I LOOPVIEW OG MINI VIEW) ALTSÅ TITEL OG PRIS ***************/
+.template-tekst {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.3rem;
+}
+
+.titel,
+.pris {
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  color: black;
+  font-weight: 0;
+}
+/******************* TEMPLATE TEKST (BÅDE I LOOPVIEW OG MINI VIEW) ALTSÅ TITEL OG PRIS SLUT ***************/
+
+/******************* MINI VIEW H2 LIGNENDE PRODUKTER ***************/
+.h2_lignende {
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+/******************* ARTIKEL_SINGLE SINGLEVIEW ***************/
+#artikel_single {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin-bottom: 5rem;
+  width: 60%;
+}
+
+/******************* TILFØJ TIL KURV KNAP PÅ SINGLEVIEW ***************/
+.tilføj_single {
+  background-color: #042c48;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  border: none;
+  text-align: center;
+  padding-inline: 18px;
+  padding-block: 8px;
+  font-size: 13px;
+}
+
+/******************* CURSOR PÅ BILLEDE PÅ LOOPVIEW ***************/
+.image {
+  cursor: pointer;
+}
+
+.tekst_boks_produkter {
+  background-color: #f2efec;
+  padding-block: 4rem;
+  margin-inline: 40rem;
+}
+
+.tekst_boks_produkter p {
+  text-align: center;
+  margin: 0rem;
+}
