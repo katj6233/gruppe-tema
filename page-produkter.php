@@ -15,12 +15,12 @@ get_header(); ?>
 <section id="primary">
 
 
-<img src="<?php echo get_stylesheet_directory_uri()?>/images/header_produkter.png" alt="Overskrift til produktside">
+<img class="hero_overskrift" src="<?php echo get_stylesheet_directory_uri()?>/images/hero_produkter.png" alt="Overskrift til produktside">
 
     <div id="main" class="site-main">
 
     <div class="tekst_boks_produkter">
-            <p>Velkommen til. Her kan du se hvilke lamper der er tilgængelige</p>
+            <p>Made By Nicholas laver unikke håndlavede lamper, som fanger ens opmærksom med dets smukke farver og former. Vores mission er at lave smukke, unikke, funktionelle og kvalitetslamper som passer ind i en hver indretning. Nu skal du ikke længere tage valget mellem vintage og det elegante look, for her får du hele pakken.</p>
     </div>
 
     <div class="dropdown-menu">
@@ -48,7 +48,12 @@ get_header(); ?>
 
     <template>
       <article id="artikel">
+        <figure class="image_boks">
         <img class="image" src="" alt="" />
+        <div class="image_overlay">
+            <button class="produkt_tilføj">Se produkt</button>
+        </div>
+        </figure>
         <div class="template-tekst">
         <h2 class="titel"></h2>
 		<p class="pris"></p>

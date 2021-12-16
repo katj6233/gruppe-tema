@@ -1,3 +1,21 @@
+.specifikationer_dropdown,
+.div_single {
+  color: #000;
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+}
+
+.titel_single {
+  color: #000;
+  font-family: "Lato", sans-serif;
+  font-size: 25px;
+  margin-top: 2rem;
+}
+
+#oplysninger_section p {
+  margin-top: 2rem;
+}
+
 /******************* SIDEBAR SAT TIL 0 MARGIN, ELLERS KAN MAN IKKE ORDNE DET ***************/
 
 .elementor-37 .elementor-element.elementor-element-68a6893 {
@@ -9,19 +27,27 @@
 .dropdown-menu {
   display: flex;
   gap: 2rem;
-  margin-block: 6rem;
+  margin-top: 6rem;
+  margin-bottom: 2rem;
+}
+
+.produkt_tilføj {
+  margin-bottom: 1rem;
+  margin-left: 1rem;
 }
 
 /* Dropdown Button */
 .dropbtn-categori,
 .dropbtn-kategori,
-.dropbtn-kategori2 {
+.dropbtn-kategori2,
+.produkt_tilføj,
+.tilføj_single {
   background-color: #042c48;
   color: white;
-  font-family: "Montserrat", sans-serif;
-  padding-inline: 20px;
-  padding-block: 10px;
-  font-size: 16px;
+  font-family: "Lato", sans-serif;
+  padding-inline: 15px;
+  padding-block: 8px;
+  font-size: 14px;
   border: none;
 }
 
@@ -34,7 +60,7 @@
 }
 
 .dropbtn-categori {
-  margin-left: 10rem;
+  margin-left: 4rem;
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -42,7 +68,7 @@
   display: none;
   position: absolute;
   background-color: white;
-  min-width: 160px;
+  min-width: 100px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
@@ -61,36 +87,16 @@
   display: block;
 }
 
-/* Change color of dropdown links on hover */
-.dropdown-content div:hover {
-  background-color: #becdda;
-  color: white;
-}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {
-  background-color: #becdda;
-}
-
-.dropdown:hover .dropbtn-argang {
-  background-color: #becdda;
-}
-
 /******************* DROPDOWN MENU SLUT ***************/
 
 /******************* BREADCRUMB STI ***************/
 
 .breadcrumb {
-  margin-top: 20rem;
+  margin-top: 15rem;
   display: flex;
   list-style: none;
-  gap: 2rem;
-  margin-left: 0rem;
+  gap: 1rem;
+  margin-left: 2rem;
 }
 
 ul.breadcrumb li a {
@@ -109,13 +115,39 @@ ul.breadcrumb li a:hover {
 
 /******************* BREADCRUMB STI SLUT ***************/
 
+figure {
+  display: grid;
+}
+
+.image {
+  grid-area: 1/1;
+}
+
+.image_overlay {
+  grid-area: 1/1;
+  place-self: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+/********* FORSIDE **************/
+
+.hero_overskrift {
+  margin-top: 8rem;
+}
+
 /******************* PRODUKTER I LOOPVIEW OG ANDRE PRODUKTER I MINI LOOPVIEW PÅ SINGLEVIEW GRID ***************/
 #produkter-oversigt,
 #andre_produkter {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 35px;
-  margin-inline: 10rem;
+  padding-inline: 4rem;
+  margin-bottom: 5rem;
 }
 
 /******************* TEMPLATE TEKST (BÅDE I LOOPVIEW OG MINI VIEW) ALTSÅ TITEL OG PRIS ***************/
@@ -128,50 +160,205 @@ ul.breadcrumb li a:hover {
 .titel,
 .pris {
   font-size: 16px;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
   color: black;
-  font-weight: 0;
+  font-weight: 500;
+  line-height: 1;
 }
 /******************* TEMPLATE TEKST (BÅDE I LOOPVIEW OG MINI VIEW) ALTSÅ TITEL OG PRIS SLUT ***************/
 
 /******************* MINI VIEW H2 LIGNENDE PRODUKTER ***************/
-.h2_lignende {
+#h2_lignende {
   text-align: center;
-  font-size: 2.5rem;
-}
-
-/******************* ARTIKEL_SINGLE SINGLEVIEW ***************/
-#artikel_single {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  margin-bottom: 5rem;
-  width: 60%;
+  font-size: 20px;
+  font-family: "Lato", sans-serif;
+  color: #000;
 }
 
 /******************* TILFØJ TIL KURV KNAP PÅ SINGLEVIEW ***************/
-.tilføj_single {
-  background-color: #042c48;
-  font-family: "Montserrat", sans-serif;
-  color: white;
-  border: none;
-  text-align: center;
-  padding-inline: 18px;
-  padding-block: 8px;
-  font-size: 13px;
-}
-
-/******************* CURSOR PÅ BILLEDE PÅ LOOPVIEW ***************/
-.image {
-  cursor: pointer;
-}
 
 .tekst_boks_produkter {
   background-color: #f2efec;
-  padding-block: 4rem;
-  margin-inline: 40rem;
+  margin-block: 2rem;
+  padding-block: 2rem;
+  margin-inline: 4rem;
 }
 
 .tekst_boks_produkter p {
   text-align: center;
   margin: 0rem;
+  font-family: "Lato", sans-serif;
+  padding-inline: 3rem;
+  font-size: 14px;
+}
+
+#artikel_single {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin-bottom: 5rem;
+  width: 100%;
+  padding-inline: 2rem;
+  padding-top: 4rem;
+  margin-top: 5rem;
+  margin-bottom: 10rem;
+  background-color: #f2efeca8;
+}
+/*********** MINI TABLET *************/
+@media (min-width: 640px) {
+  #artikel_single {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .titel_single {
+    margin-top: 1rem;
+  }
+
+  .breadcrumb {
+    margin-left: 4rem;
+  }
+}
+
+/******* TABLET ********/
+@media (min-width: 700px) {
+  /******************* ARTIKEL_SINGLE SINGLEVIEW ***************/
+  .breadcrumb {
+    margin-left: 8rem;
+  }
+
+  #artikel_single {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .div_single {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  .titel_single {
+    margin-top: 1rem;
+  }
+
+  .pic_single {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  .tekst_boks_produkter {
+    margin-inline: 10rem;
+  }
+}
+
+/*********** MINI TABLET *************/
+@media (min-width: 800px) {
+  .titel_single {
+    margin-top: 0rem;
+  }
+}
+
+/******* DESKTOP ********/
+@media (min-width: 1100px) {
+  #produkter-oversigt,
+  #andre_produkter {
+    margin-inline: 6rem;
+  }
+
+  .tekst_boks_produkter {
+    margin-inline: 40rem;
+  }
+
+  /******************* CURSOR PÅ BILLEDE PÅ LOOPVIEW ***************/
+  .image {
+    cursor: pointer;
+  }
+
+  /****************** MARGIN **************/
+  #main {
+    margin-bottom: 10rem;
+  }
+
+  .hero_overskrift {
+    padding-inline: 20rem;
+    margin-top: 6rem;
+  }
+
+  .image_overlay {
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.2);
+    opacity: 0;
+  }
+
+  .image_overlay:hover {
+    opacity: 1;
+  }
+
+  .produkt_tilføj {
+    width: 100px;
+  }
+
+  /* Dropdown Button */
+  .dropbtn-categori,
+  .dropbtn-kategori,
+  .dropbtn-kategori2 {
+    padding-inline: 20px;
+    padding-block: 10px;
+  }
+
+  .dropbtn-categori {
+    margin-left: 10rem;
+  }
+
+  /* Change color of dropdown links on hover */
+  .dropdown-content div:hover {
+    background-color: #becdda;
+    color: white;
+  }
+
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {
+    background-color: #becdda;
+  }
+
+  .dropdown:hover .dropbtn-argang {
+    background-color: #becdda;
+  }
+
+  /********** SINGLEVIEW ***********/
+  .breadcrumb {
+    gap: 2rem;
+    margin-left: 22rem;
+  }
+
+  #artikel_single {
+    width: 70%;
+    padding-top: 0rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .div_single {
+    padding-block: 6rem;
+    padding-right: 4rem;
+    padding-left: 1rem;
+  }
+
+  .titel_single {
+    margin-top: 0rem;
+  }
+
+  .pic_single {
+    padding-right: 1rem;
+    padding-left: 4rem;
+    padding-block: 6rem;
+  }
 }

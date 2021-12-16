@@ -25,31 +25,50 @@ get_header();
         </ul>
 
         <article id="artikel_single">
+
         <img class="pic_single" src="" alt="" />
         <div class="div_single">
-        <h2 class="titel_single"></h2>
+        <h1 class="titel_single"></h1>
         <p class="beskrivelse_single"></p>
         <p class="pris_single"></p>
+
         <button class="tilføj_single">Tilføj til kurv</button>
+
         <div id="oplysninger_section">
-        <p>Detaljer ↓</p>
+        <p>Specifikationer</p>
+        <div class="produkt_detaljer">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        </div>
+        </div>
+
+        <p class="specifikationer_dropdown"></p>
+
+        <div id="levering_section">
+        <p>Levering</p>
         <div class="produkt_detaljer">
         <div class="line1"></div>
         <div class="line2"></div>
         </div>
         </div>
         </div>
+
+        <p class="levering_dropdown"></p>
+
         </article>
 
-        <p class="beskrivelse_dropdown"></p>
-
-        <h2 id="h2_lignende">Andre kunder har købt</h2>
+        <h2 id="h2_lignende">Se lignende produkter</h2>
 
         <section id="andre_produkter"></section>
 
         <template>
         <article class="lignende_produkter">
+        <figure class="image_boks">
         <img class="image" src="" alt="" />
+        <div class="image_overlay">
+            <button class="produkt_tilføj">Læs mere</button>
+        </div>
+        </figure>
         <div class="template-tekst">
         <h2 class="titel"></h2>
 		<p class="pris"></p>
@@ -67,11 +86,16 @@ get_header();
         const produkterUrl = "https://katjalevring.dk/kea/10_eksamensprojekt/made_by_nicholas/wp-json/wp/v2/produkt?per_page=3";
         const produktTemplate = document.querySelector("template");
 	    const ekstra_info = document.querySelector("#oplysninger_section");
-        const ekstra_beskrivelse = document.querySelector(".beskrivelse_dropdown");
+        const ekstra_info_levering = document.querySelector("#levering_section");
+        const specifikationer_beskrivelse = document.querySelector(".specifikationer_dropdown");
+        const levering_beskrivelse = document.querySelector(".levering_dropdown");
         const linje = document.querySelector(".line2");
 
-        ekstra_beskrivelse.style.display = "none";
+        specifikationer_beskrivelse.style.display = "none";
         ekstra_info.addEventListener("click", foldOut);
+
+        levering_beskrivelse.style.display = "none";
+        ekstra_info_levering.addEventListener("click", foldOutLevering);
         
 		async function getJson() {
   		const response = await fetch(url);
@@ -88,11 +112,22 @@ get_header();
 		}
 
         function foldOut() {
-        if (ekstra_beskrivelse.style.display == "none") {
-        ekstra_beskrivelse.style.display = "block";
+        if (specifikationer_beskrivelse.style.display == "none") {
+            specifikationer_beskrivelse.style.display = "block";
         linje.style.display = "none";
         } else {
-        ekstra_beskrivelse.style.display = "none";
+            specifikationer_beskrivelse.style.display = "none";
+        linje.style.display = "block";
+        }
+    }
+
+
+    function foldOutLevering() {
+        if (levering_beskrivelse.style.display == "none") {
+            levering_beskrivelse.style.display = "block";
+        linje.style.display = "none";
+        } else {
+            levering_beskrivelse.style.display = "none";
         linje.style.display = "block";
         }
     }
@@ -101,8 +136,9 @@ get_header();
             document.querySelector(".titel_single").textContent = produkt.title.rendered;
             document.querySelector(".pic_single").src = produkt.billede.guid;
             document.querySelector(".beskrivelse_single").textContent = produkt.beskrivelse;
-            document.querySelector(".pris_single").textContent = produkt.pris + "kr";
-            document.querySelector(".beskrivelse_dropdown").innerHTML = produkt.beskrivelse_dropdown;
+            document.querySelector(".pris_single").textContent = produkt.salgspris + " " + "kr.";
+            document.querySelector(".specifikationer_dropdown").innerHTML = produkt.beskrivelse_dropdown;
+            document.querySelector(".levering_dropdown").innerHTML = produkt.shipping_dropdown;
         }
 
             
