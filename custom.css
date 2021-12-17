@@ -1,19 +1,59 @@
 .specifikationer_dropdown,
-.div_single {
+.div_single,
+.levering_dropdown {
   color: #000;
   font-family: "Lato", sans-serif;
   font-size: 14px;
 }
 
+.beskrivelse_single p {
+  font-weight: 300;
+  font-size: 15px;
+}
+
 .titel_single {
-  color: #000;
+  color: #042c48;
   font-family: "Lato", sans-serif;
   font-size: 25px;
   margin-top: 2rem;
+  font-weight: 350;
 }
 
 #oplysninger_section p {
   margin-top: 2rem;
+}
+
+.produkt_detaljer div,
+.produkt_detaljer_levering div {
+  width: 23px;
+  height: 1px;
+  margin: 5px;
+  background-color: #000;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.line2,
+.line2_levering {
+  transform: rotate(90deg) translate(0px, 33px);
+}
+
+#oplysninger_section,
+#levering_section {
+  display: flex;
+  cursor: pointer;
+}
+
+.produkt_detaljer,
+.produkt_detaljer_levering {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 1rem;
+}
+
+.produkt_detaljer_levering {
+  margin-top: -2rem;
 }
 
 /******************* SIDEBAR SAT TIL 0 MARGIN, ELLERS KAN MAN IKKE ORDNE DET ***************/
@@ -45,10 +85,12 @@
   background-color: #042c48;
   color: white;
   font-family: "Lato", sans-serif;
-  padding-inline: 15px;
-  padding-block: 8px;
+  padding-inline: 7px;
+  padding-block: 7px;
   font-size: 14px;
+  font-weight: 500;
   border: none;
+  border-radius: 3px;
 }
 
 /* The container <div> - needed to position the dropdown content */
@@ -60,6 +102,9 @@
 }
 
 .dropbtn-categori {
+  margin-left: 4rem;
+}
+.dropdown-content-first {
   margin-left: 4rem;
 }
 
@@ -171,9 +216,11 @@ figure {
 /******************* MINI VIEW H2 LIGNENDE PRODUKTER ***************/
 #h2_lignende {
   text-align: center;
-  font-size: 20px;
+  font-size: 35px;
   font-family: "Lato", sans-serif;
-  color: #000;
+  color: #042c48;
+  margin-bottom: 5rem;
+  font-weight: 300;
 }
 
 /******************* TILFØJ TIL KURV KNAP PÅ SINGLEVIEW ***************/
@@ -185,12 +232,25 @@ figure {
   margin-inline: 4rem;
 }
 
+.tekst_boks_produkter h1 {
+  text-align: center;
+  margin: 0rem;
+  font-family: "Lato", sans-serif;
+  padding-inline: 3rem;
+  font-size: 30px;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  color: #042c48;
+}
+
 .tekst_boks_produkter p {
   text-align: center;
   margin: 0rem;
   font-family: "Lato", sans-serif;
   padding-inline: 3rem;
   font-size: 14px;
+  margin-bottom: 2rem;
+  color: black;
 }
 
 #artikel_single {
@@ -224,6 +284,10 @@ figure {
 /******* TABLET ********/
 @media (min-width: 700px) {
   /******************* ARTIKEL_SINGLE SINGLEVIEW ***************/
+  .tekst_boks_produkter h1 {
+    font-size: 52px;
+  }
+
   .breadcrumb {
     margin-left: 8rem;
   }
@@ -267,13 +331,21 @@ figure {
     margin-inline: 6rem;
   }
 
-  .tekst_boks_produkter {
+  /* .tekst_boks_produkter {
     margin-inline: 40rem;
+  } */
+
+  .tekst_boks_produkter h1 {
+    font-size: 55px;
   }
 
   /******************* CURSOR PÅ BILLEDE PÅ LOOPVIEW ***************/
   .image {
     cursor: pointer;
+  }
+
+  .dropdown-content-first {
+    margin-left: 10rem;
   }
 
   /****************** MARGIN **************/
@@ -282,8 +354,8 @@ figure {
   }
 
   .hero_overskrift {
-    padding-inline: 20rem;
-    margin-top: 6rem;
+    padding-inline: 15rem;
+    margin-top: 5rem;
   }
 
   .image_overlay {
@@ -360,5 +432,17 @@ figure {
     padding-right: 1rem;
     padding-left: 4rem;
     padding-block: 6rem;
+  }
+
+  .tekst_boks_produkter p {
+    font-size: 18px;
+    font-weight: 300;
+    padding-inline: 29rem;
+  }
+
+  .specifikationer_dropdown,
+  .div_single,
+  .levering_dropdown {
+    font-size: 15px;
   }
 }

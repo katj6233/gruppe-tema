@@ -32,7 +32,7 @@ get_header();
         <p class="beskrivelse_single"></p>
         <p class="pris_single"></p>
 
-        <button class="tilføj_single">Tilføj til kurv</button>
+        <button class="tilføj_single">TILFØJ TIL KURV</button>
 
         <div id="oplysninger_section">
         <p>Specifikationer</p>
@@ -46,14 +46,16 @@ get_header();
 
         <div id="levering_section">
         <p>Levering</p>
-        <div class="produkt_detaljer">
+        <div class="produkt_detaljer_levering">
         <div class="line1"></div>
-        <div class="line2"></div>
-        </div>
+        <div class="line2_levering"></div>
         </div>
         </div>
 
         <p class="levering_dropdown"></p>
+
+        </div>
+
 
         </article>
 
@@ -66,7 +68,7 @@ get_header();
         <figure class="image_boks">
         <img class="image" src="" alt="" />
         <div class="image_overlay">
-            <button class="produkt_tilføj">Læs mere</button>
+            <button class="produkt_tilføj">LÆS MERE</button>
         </div>
         </figure>
         <div class="template-tekst">
@@ -90,6 +92,7 @@ get_header();
         const specifikationer_beskrivelse = document.querySelector(".specifikationer_dropdown");
         const levering_beskrivelse = document.querySelector(".levering_dropdown");
         const linje = document.querySelector(".line2");
+        const linje2 = document.querySelector(".line2_levering");
 
         specifikationer_beskrivelse.style.display = "none";
         ekstra_info.addEventListener("click", foldOut);
@@ -125,10 +128,10 @@ get_header();
     function foldOutLevering() {
         if (levering_beskrivelse.style.display == "none") {
             levering_beskrivelse.style.display = "block";
-        linje.style.display = "none";
+            linje2.style.display = "none";
         } else {
             levering_beskrivelse.style.display = "none";
-        linje.style.display = "block";
+            linje2.style.display = "block";
         }
     }
 

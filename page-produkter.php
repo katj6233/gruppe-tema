@@ -20,23 +20,24 @@ get_header(); ?>
     <div id="main" class="site-main">
 
     <div class="tekst_boks_produkter">
-            <p>Made By Nicholas laver unikke håndlavede lamper, som fanger ens opmærksom med dets smukke farver og former. Vores mission er at lave smukke, unikke, funktionelle og kvalitetslamper som passer ind i en hver indretning. Nu skal du ikke længere tage valget mellem vintage og det elegante look, for her får du hele pakken.</p>
+        <h1>Lamper</h1>
+        <p>Made By Nicholas laver unikke håndlavede lamper, som fanger ens opmærksom med dets smukke farver og former. Vores mission er at lave smukke, unikke, funktionelle og kvalitetslamper som passer ind i en hver indretning. Nu skal du ikke længere tage valget mellem vintage og det elegante look, for her får du hele pakken.</p>
     </div>
 
     <div class="dropdown-menu">
 
     <div class="dropdown">
-  	<button class="dropbtn-categori">Farve ↓</button>
-    <nav class="dropdown-content" id="categori-filtrering"><div class="filter valgt" data-cat="alle">Alle</div></nav>
+  	<button class="dropbtn-categori">FARVE ↓</button>
+    <nav class="dropdown-content-first dropdown-content" id="categori-filtrering"><div class="filter valgt" data-cat="alle">Alle</div></nav>
     </div>
 
 	<div class="dropdown">
-  	<button class="dropbtn-kategori">Højde ↓</button>
+  	<button class="dropbtn-kategori">HØJDE ↓</button>
     <nav class="dropdown-content" id="kategori-filtrering"><div class="filter valgt" data-kat="alle">Alle</div></nav>
     </div>
 
     <div class="dropdown">
-  	<button class="dropbtn-kategori2">Pris ↓</button>
+  	<button class="dropbtn-kategori2">PRIS ↓</button>
     <nav class="dropdown-content" id="kategori2-filtrering"><div class="filter valgt" data-kat2="alle">Alle</div></nav>
     </div>
 
@@ -44,14 +45,14 @@ get_header(); ?>
 
         <section id="produkter-oversigt"></section>
        
-</div>
+    </div>
 
     <template>
       <article id="artikel">
         <figure class="image_boks">
         <img class="image" src="" alt="" />
         <div class="image_overlay">
-            <button class="produkt_tilføj">Se produkt</button>
+            <button class="produkt_tilføj">SE PRODUKT</button>
         </div>
         </figure>
         <div class="template-tekst">
@@ -109,10 +110,8 @@ get_header(); ?>
         }
 
 		function opretKnapper(){
-            
             categories.forEach(cat=>{
                //console.log(cat.id);
-
                 if(cat.name != "Uncategorized"){
                 document.querySelector("#categori-filtrering").innerHTML += `<div class="filter" data-cat="${cat.id}">${cat.name}</div>`
                 }
@@ -127,7 +126,7 @@ get_header(); ?>
             })
 
             addEventListenersToButtons();
-        }
+            }
 
 
         function visProdukter() {
@@ -138,12 +137,14 @@ get_header(); ?>
             console.log({filterPriser});
             produkter.forEach(produkt => {
                 //tjek filterFarve, filterHoejde og filterPriser til filtrering
-                if ((filterFarve == "alle"  || produkt.categories.includes(parseInt(filterFarve))) && (filterHoejde == "alle"  || produkt.kategori.includes(parseInt(filterHoejde))) && (filterPriser == "alle"  || produkt.pris.includes(parseInt(filterPriser)))) {
+                if ((filterFarve == "alle"  || produkt.categories.includes(parseInt(filterFarve))) 
+                && (filterHoejde == "alle"  || produkt.kategori.includes(parseInt(filterHoejde))) 
+                && (filterPriser == "alle"  || produkt.pris.includes(parseInt(filterPriser)))) {
                     const klon = temp.cloneNode(true).content;
                     console.log(klon);
                     klon.querySelector(".titel").textContent = produkt.title.rendered;
                     klon.querySelector(".image").src = produkt.billede.guid;
-					klon.querySelector(".pris").textContent = produkt.salgspris + " " + "kr";
+					klon.querySelector(".pris").textContent = produkt.salgspris + " " + "kr.";
                     klon.querySelector("article").addEventListener("click", () => {
                         location.href = produkt.link;
                     })
@@ -152,7 +153,6 @@ get_header(); ?>
                     console.log("der er ingen produkter");
                 }
             })
-
         }
 
 		function addEventListenersToButtons() {
