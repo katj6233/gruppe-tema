@@ -21,7 +21,7 @@ get_header(); ?>
 
     <div class="tekst_boks_produkter">
         <h1>Lamper</h1>
-        <p>Made By Nicholas laver unikke håndlavede lamper, som fanger ens opmærksom med dets smukke farver og former. Vores mission er at lave smukke, unikke, funktionelle og kvalitetslamper som passer ind i en hver indretning. Nu skal du ikke længere tage valget mellem vintage og det elegante look, for her får du hele pakken.</p>
+        <p>Made By Nicholas laver unikke håndlavede lamper, som fanger ens opmærksom med dets smukke farver og former. Vores mission er at lave smukke, unikke, funktionelle og kvalitetslamper som passer ind i enhver indretning. Nu skal du ikke længere tage valget mellem vintage og det elegante look, for her får du hele pakken.</p>
     </div>
 
     <div class="dropdown-menu">
