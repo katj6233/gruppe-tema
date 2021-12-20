@@ -1,34 +1,205 @@
+/****************** GENERELLE REGLER *********************/
+html {
+  --primary: #000;
+  --secondary: #042c48;
+  --third: #f2efec;
+  --fourth: #becdda;
+  --fifth: #d1ba9c;
+  --sixth: #fff;
+
+  --generalText: "Lato", sans-serif;
+
+  background-color: var(--sixth);
+}
+
+/* SIDEBAR SAT TIL 0 MARGIN, ELLERS KAN MAN IKKE ORDNE DET */
+.elementor-37 .elementor-element.elementor-element-68a6893 {
+  margin-bottom: 0px;
+}
+/****************** SLUT GENERELLE REGLER *********************/
+
+/******************* DROPDOWN MENU ***************/
+/* selve containeren får display flex for at den ligger sig vandret */
+.dropdown-menu {
+  display: flex;
+  gap: 2rem;
+  margin-top: 6rem;
+  margin-bottom: 2rem;
+}
+
+/* Dropdown Button og styling af to knapper */
+.dropbtn-categori,
+.dropbtn-kategori,
+.dropbtn-kategori2,
+.produkt_tilføj,
+.tilføj_single {
+  background-color: var(--secondary);
+  color: var(--sixth);
+  font-family: var(--generalText);
+  padding-inline: 7px;
+  padding-block: 7px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 3px;
+}
+
+/* Hover på knapper */
+.dropbtn-categori:hover,
+.dropbtn-kategori:hover,
+.dropbtn-kategori2:hover,
+.produkt_tilføj:hover,
+.tilføj_single:hover {
+  background-color: var(--fourth);
+  color: var(--primary);
+}
+
+/* containeren <div> får reglen  position relative */
+.dropbtn-categori,
+.dropbtn-kategori,
+.dropbtn-kategori2 {
+  position: relative;
+  display: inline-block;
+}
+
+/* containeren rykker til ud fra siden */
+.dropbtn-categori {
+  margin-left: 4rem;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--sixth);
+  min-width: 100px;
+  /* box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); */
+  z-index: 1;
+}
+
+/* Linksene inde i dropdown */
+.dropdown-content div {
+  color: var(--primary);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+
+/* vis dropdown menuen når man hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/******************* DROPDOWN MENU SLUT ***************/
+
+/******************* KNAPPER ***************/
+/* styling af produkt_tilføj knap på produktside */
+.produkt_tilføj {
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+}
+/******************* KNAPPER SLUT ***************/
+
+/******************* BREADCRUMB STI ***************/
+/* placering af brødkrummesti */
+.breadcrumb {
+  margin-top: 15rem;
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  margin-left: 2rem;
+}
+
+/* styling på ord */
+ul.breadcrumb li a {
+  color: var(--primary);
+  font-family: var(--generalText);
+}
+
+/* styling af pil mellem links */
+ul.breadcrumb li + li:before {
+  color: var(--primary);
+  padding-right: 2rem;
+  content: ">";
+}
+
+/* styling med underlinje */
+ul.breadcrumb li a:hover {
+  text-decoration: underline;
+}
+/******************* BREADCRUMB STI SLUT ***************/
+
+/******************* KLASSE TIL POPUP SINGLEVIEW ***************/
+.hidden {
+  display: none;
+}
+/******************* SLUT KLASSER TIL POPUP SINGLEVIEW ***************/
+
+/******************* STYLING TIL POPUP SINGLEVIEW ***************/
+/* placering af container og generel styling af kassen */
+#popup_produkter {
+  position: fixed;
+  top: 58rem;
+  right: 2rem;
+  background-color: var(--third);
+  width: 23vh;
+  height: 14vh;
+  line-height: 1.5rem;
+  margin-left: 2rem;
+  padding-bottom: 1rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  padding-right: 0rem;
+  padding-left: 1rem;
+}
+
+/* styling h3 */
+#popup_produkter h3 {
+  text-align: center;
+  padding-top: 1rem;
+  font-family: var(--generalText);
+  color: var(--primary);
+  font-size: 14px;
+}
+/******************* SLUT STYLING TIL POPUP SINGLEVIEW ***************/
+
+/****************** MOBILE REGLER *********************/
+/***** styling *****/
 .specifikationer_dropdown,
 .div_single,
 .levering_dropdown {
-  color: #000;
-  font-family: "Lato", sans-serif;
+  color: var(--primary);
+  font-family: var(--generalText);
   font-size: 14px;
 }
 
+/***** styling *****/
 .beskrivelse_single p {
-  font-weight: 300;
+  font-weight: 350;
   font-size: 15px;
 }
 
+/***** styling *****/
 .titel_single {
-  color: #042c48;
-  font-family: "Lato", sans-serif;
+  color: var(--secondary);
+  font-family: var(--generalText);
   font-size: 25px;
   margin-top: 2rem;
   font-weight: 350;
 }
 
+/***** styling *****/
 #oplysninger_section p {
   margin-top: 2rem;
 }
 
+/***** styling *****/
 .produkt_detaljer div,
 .produkt_detaljer_levering div {
   width: 23px;
   height: 1px;
   margin: 5px;
-  background-color: #000;
+  background-color: var(--primary);
   border-radius: 5px;
   transition: all 0.3s ease;
 }
@@ -38,12 +209,14 @@
   transform: rotate(90deg) translate(0px, 33px);
 }
 
+/***** placering og pointer *****/
 #oplysninger_section,
 #levering_section {
   display: flex;
   cursor: pointer;
 }
 
+/***** placering *****/
 .produkt_detaljer,
 .produkt_detaljer_levering {
   display: flex;
@@ -52,122 +225,10 @@
   padding-left: 1rem;
 }
 
+/***** styling *****/
 .produkt_detaljer_levering {
   margin-top: -2rem;
 }
-
-/******************* SIDEBAR SAT TIL 0 MARGIN, ELLERS KAN MAN IKKE ORDNE DET ***************/
-
-.elementor-37 .elementor-element.elementor-element-68a6893 {
-  margin-bottom: 0px;
-}
-
-/******************* DROPDOWN MENU ***************/
-
-.dropdown-menu {
-  display: flex;
-  gap: 2rem;
-  margin-top: 6rem;
-  margin-bottom: 2rem;
-}
-
-.produkt_tilføj {
-  margin-bottom: 1rem;
-  margin-left: 1rem;
-}
-
-/* Dropdown Button */
-.dropbtn-categori,
-.dropbtn-kategori,
-.dropbtn-kategori2,
-.produkt_tilføj,
-.tilføj_single {
-  background-color: #042c48;
-  color: white;
-  font-family: "Lato", sans-serif;
-  padding-inline: 7px;
-  padding-block: 7px;
-  font-size: 14px;
-  font-weight: 500;
-  border: none;
-  border-radius: 3px;
-}
-
-.dropbtn-categori:hover,
-.dropbtn-kategori:hover,
-.dropbtn-kategori2:hover,
-.produkt_tilføj:hover,
-.tilføj_single:hover {
-  background-color: #becdda;
-  color: #000;
-}
-
-/* The container <div> - needed to position the dropdown content */
-.dropbtn-categori,
-.dropbtn-kategori,
-.dropbtn-kategori2 {
-  position: relative;
-  display: inline-block;
-}
-
-.dropbtn-categori {
-  margin-left: 4rem;
-}
-.dropdown-content-first {
-  margin-left: 4rem;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: white;
-  min-width: 100px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content div {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  cursor: pointer;
-}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/******************* DROPDOWN MENU SLUT ***************/
-
-/******************* BREADCRUMB STI ***************/
-
-.breadcrumb {
-  margin-top: 15rem;
-  display: flex;
-  list-style: none;
-  gap: 1rem;
-  margin-left: 2rem;
-}
-
-ul.breadcrumb li a {
-  color: black;
-}
-
-ul.breadcrumb li + li:before {
-  color: black;
-  padding-right: 2rem;
-  content: ">";
-}
-
-ul.breadcrumb li a:hover {
-  text-decoration: underline;
-}
-
-/******************* BREADCRUMB STI SLUT ***************/
 
 figure {
   display: grid;
@@ -214,7 +275,7 @@ figure {
 .titel,
 .pris {
   font-size: 16px;
-  font-family: "Lato", sans-serif;
+  font-family: var(--generalText);
   font-size: 16px;
   color: black;
   font-weight: 500;
@@ -226,39 +287,42 @@ figure {
 #h2_lignende {
   text-align: center;
   font-size: 35px;
-  font-family: "Lato", sans-serif;
-  color: #042c48;
+  font-family: var(--generalText);
+  color: var(--secondary);
   margin-bottom: 5rem;
   font-weight: 300;
 }
 
 /******************* TILFØJ TIL KURV KNAP PÅ SINGLEVIEW ***************/
 
+/***** styling *****/
 .tekst_boks_produkter {
-  background-color: #f2efec;
+  background-color: var(--third);
   margin-block: 2rem;
   padding-block: 2rem;
 }
 
+/***** styling *****/
 .tekst_boks_produkter h1 {
   text-align: center;
   margin: 0rem;
-  font-family: "Lato", sans-serif;
+  font-family: var(--generalText);
   padding-inline: 3rem;
   font-size: 30px;
   font-weight: 300;
   margin-bottom: 2rem;
-  color: #042c48;
+  color: var(--secondary);
 }
 
+/***** styling *****/
 .tekst_boks_produkter p {
   text-align: center;
   margin: 0rem;
-  font-family: "Lato", sans-serif;
+  font-family: var(--secondary);
   padding-inline: 3rem;
   font-size: 14px;
   margin-bottom: 2rem;
-  color: black;
+  color: var(--primary);
   font-weight: 300;
 }
 
@@ -275,6 +339,13 @@ figure {
 }
 /*********** MINI TABLET *************/
 @media (min-width: 640px) {
+  /* popup produkter tilrettes i media query */
+  #popup_produkter {
+    position: fixed;
+    top: 58rem;
+    right: 6rem;
+  }
+
   #artikel_single {
     width: 90%;
     margin-left: auto;
@@ -292,13 +363,21 @@ figure {
 
 /******* TABLET ********/
 @media (min-width: 700px) {
+  /* popup produkter tilrettes i media query */
+  #popup_produkter {
+    position: fixed;
+    top: 55rem;
+    right: 9rem;
+  }
+
+  /******************* ARTIKEL_SINGLE BRØDKRUMME ***************/
+  .breadcrumb {
+    margin-left: 8rem;
+  }
+
   /******************* ARTIKEL_SINGLE SINGLEVIEW ***************/
   .tekst_boks_produkter h1 {
     font-size: 52px;
-  }
-
-  .breadcrumb {
-    margin-left: 8rem;
   }
 
   #artikel_single {
@@ -320,14 +399,17 @@ figure {
     padding-right: 1rem;
     padding-left: 1rem;
   }
-
-  /* .tekst_boks_produkter {
-    margin-inline: 10rem;
-  } */
 }
 
 /*********** MINI TABLET *************/
 @media (min-width: 800px) {
+  /* popup produkter tilrettes i media query */
+  #popup_produkter {
+    position: fixed;
+    top: 13rem;
+    right: 8rem;
+  }
+
   .titel_single {
     margin-top: 0rem;
   }
@@ -335,14 +417,15 @@ figure {
 
 /******* DESKTOP ********/
 @media (min-width: 1100px) {
+  /* popup produkter tilrettes i media query */
+  #popup_produkter {
+    top: 12rem;
+    right: 7rem;
+  }
   #produkter-oversigt,
   #andre_produkter {
     margin-inline: 6rem;
   }
-
-  /* .tekst_boks_produkter {
-    margin-inline: 40rem;
-  } */
 
   .tekst_boks_produkter h1 {
     font-size: 55px;

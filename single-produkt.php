@@ -18,12 +18,14 @@ get_header();
 	    <section id="primary">
 		<div id="main-single" class="site-main">
 
+        <!-- breadcrums på singleview -->
         <ul class="breadcrumb">
         <li><a href="http://katjalevring.dk/kea/10_eksamensprojekt/made_by_nicholas/">Hjem</a></li>
 	    <li><a href="http://katjalevring.dk/kea/10_eksamensprojekt/made_by_nicholas/produkter/">Produktoversigt</a></li>
         <li>Produktdetaljer</li>
         </ul>
 
+        <!-- indholdet article tag er html skabelon for det enkelte ur -->
         <article id="artikel_single">
 
         <img class="pic_single" src="" alt="" />
@@ -54,10 +56,18 @@ get_header();
 
         <p class="levering_dropdown"></p>
 
+        </article>
+
+        </div> <!-- #main-single -->
+
+        <div id="popup_produkter" class="hidden">
+        <button id="luk_produkter">X</button>
+        <h3>
+            Produktet er tilføjet <br />
+            til kurven
+        </h3>
         </div>
 
-
-        </article>
 
         <h2 id="h2_lignende">Se lignende produkter</h2>
 
@@ -93,6 +103,29 @@ get_header();
         const levering_beskrivelse = document.querySelector(".levering_dropdown");
         const linje = document.querySelector(".line2");
         const linje2 = document.querySelector(".line2_levering");
+        const tilføj_knap = document.querySelector(".tilføj_single");
+        const popup_produkter = document.querySelector("#popup_produkter");
+        const luk_popUpProdukter = document.querySelector("#luk_produkter");
+
+        // PopUp single view
+
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+        tilføj_knap.addEventListener("click", popUpProdukter);
+        luk_popUpProdukter.addEventListener("click", lukPopUp);
+        }
+
+        function lukPopUp() {
+            popup_produkter.classList.add("hidden");
+        }
+
+        function popUpProdukter() {
+            popup_produkter.classList.remove("hidden");
+        }
+
+
+        // PopUp single view slut
 
         specifikationer_beskrivelse.style.display = "none";
         ekstra_info.addEventListener("click", foldOut);
